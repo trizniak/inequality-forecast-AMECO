@@ -1,0 +1,11 @@
+`r age='{{age}}'`
+
+<p>
+### `r paste0("AROP : ",age)`
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, fig.width=13, fig.height=9}
+
+F.viz.TS(grp="COUNTRY",fltr="Age5G",ind=age,npt="level",other="dot")
+F.viz.TS(grp="COUNTRY",fltr="Age5G",ind=age)
+
+```

@@ -1,0 +1,548 @@
+CODE	Section	level	info	§
+1	POPULATION AND EMPLOYMENT	1	N	1
+1	POPULATION	2	N	1
+NPTD	Total (national accounts)	3	E	1
+NPTN	Total (demographic statistics)	3	E	1
+NPCN	0 to 14 years	3	E	1
+NPAN	15 to 64 years	3	E	1
+NPON	65 years and over	3	E	1
+2	LABOUR FORCE STATISTICS	2	N	1
+NLTN	Total labour force	3	E	1
+NLCN	Civilian labour force	3	E	1
+NECN	Civilian employment, national	3	E	1
+NECD	Civilian employment, domestic	3	E	1
+3	UNEMPLOYMENT	2	N	1
+NUTN	Total	3	E	1
+ZUTN	Percentage of active population	3	E	1
+4	EMPLOYMENT, PERSONS (NATIONAL ACCOUNTS)	2	N	1
+NETN	Total economy, national	3	E	1
+NETD	Total economy, domestic	3	E	1
+5	EMPLOYMENT, FULL-TIME EQUIVALENTS (NATIONAL ACCOUNTS)	2	N	1
+FETD	Total economy	3	E	1
+6	SELF-EMPLOYED, PERSONS (NATIONAL ACCOUNTS)	2	N	1
+NSTD	Total economy	3	E	1
+7	WAGE AND SALARY EARNERS, PERSONS (NATIONAL ACCOUNTS)	2	N	1
+NWTN	Total economy, national	3	E	1
+NWTD	Total economy, domestic	3	E	1
+8	WAGE AND SALARY EARNERS, FULL-TIME EQUIVALENTS (NATIONAL ACCOUNTS)	2	N	1
+FWTD	Total economy	3	E	1
+2	CONSUMPTION	1	N	2
+1	PRIVATE FINAL CONSUMPTION EXPENDITURE	2	N	2
+UCPH	At current prices	3	E	2
+OCPH	At constant prices	3	E	2
+PCPH	Price deflator	3	E	2
+2	PRIVATE FINAL CONSUMPTION EXPENDITURE PER HEAD OF POPULATION	2	N	2
+HCPHP	At current prices	3	E	2
+HCPHPR	At current prices relative to a country or aggregate	3	E	2
+3	ACTUAL INDIVIDUAL FINAL CONSUMPTION OF HOUSEHOLDS	2	N	2
+UCTH	At current prices	3	E	2
+OCTH	At constant prices	3	E	2
+PCTH	Price deflator	3	E	2
+4	CONSUMER PRICE INDEX	2	N	2
+ZCPIH	Harmonised (2005 = 100)	3	E	2
+ZCPIN	National	3	E	2
+5	TOTAL FINAL CONSUMPTION EXPENDITURE OF GENERAL GOVERNMENT	2	N	2
+UCTG	At current prices	3	E	2
+OCTG	At constant prices	3	E	2
+PCTG	Price deflator	3	E	2
+6	COLLECTIVE CONSUMPTION EXPENDITURE OF GENERAL GOVERNMENT	2	N	2
+UCCG	At current prices	3	E	2
+OCCG	At constant prices	3	E	2
+PCCG	Price deflator	3	E	2
+7	INDIVIDUAL CONSUMPTION EXPENDITURE OF GENERAL GOVERNMENT	2	N	2
+UCIG	At current prices	3	E	2
+OCIG	At constant prices	3	E	2
+PCIG	Price deflator	3	E	2
+8	TOTAL CONSUMPTION	2	N	2
+UCNT	At current prices	3	E	2
+OCNT	At constant prices	3	E	2
+PCNT	Price deflator	3	E	2
+3	CAPITAL FORMATION AND SAVING, TOTAL ECONOMY AND SECTORS	1	N	3
+1	GROSS FIXED CAPITAL FORMATION, TOTAL ECONOMY	2	N	3
+UIGT	At current prices	3	E	3
+OIGT	At constant prices	3	E	3
+PIGT	Price deflator	3	E	3
+2	GROSS FIXED CAPITAL FORMATION AT CURRENT PRICES, SECTORS	2	N	3
+UIGG	General government	3	E	3
+UIGP	Private sector	3	E	3
+3	NET FIXED CAPITAL FORMATION, TOTAL ECONOMY	2	N	3
+UINT	At current prices	3	E	3
+OINT	At constant prices	3	E	3
+4	NET FIXED CAPITAL FORMATION AT CURRENT PRICES, SECTORS	2	N	3
+UING	General government	3	E	3
+UINP	Private sector	3	E	3
+5	CONSUMPTION OF FIXED CAPITAL, TOTAL ECONOMY	2	N	3
+UKCT	At current prices	3	E	3
+OKCT	At constant prices	3	E	3
+6	CONSUMPTION OF FIXED CAPITAL, GENERAL GOVERNMENT	2	N	3
+UKCG	At current prices	3	E	3
+7	GROSS FIXED CAPITAL FORMATION BY TYPE OF GOODS AT CURRENT PRICES	2	N	3
+UIGCO	Construction	3	E	3
+UIGDW	Dwellings	3	E	3
+UIGNR	Non-residential construction and civil engineering	3	E	3
+UIGEQ	Equipment	3	E	3
+UIGMA	Metal products and machinery	3	E	3
+UIGTR	Transport equipment	3	E	3
+UIGOT	Other investment	3	E	3
+8	GROSS FIXED CAPITAL FORMATION BY TYPE OF GOODS AT CONSTANT PRICES	2	N	3
+OIGCO	Construction	3	E	3
+OIGDW	Dwellings	3	E	3
+OIGNR	Non-residential construction and civil engineering	3	E	3
+OIGEQ	Equipment	3	E	3
+OIGMA	Metal products and machinery	3	E	3
+OIGTR	Transport equipment	3	E	3
+OIGOT	Other investment	3	E	3
+9	GROSS FIXED CAPITAL FORMATION BY TYPE OF GOODS, PRICE DEFLATORS	2	N	3
+PIGCO	Construction	3	E	3
+PIGDW	Dwellings	3	E	3
+PIGNR	Non-residential construction and civil engineering	3	E	3
+PIGEQ	Equipment	3	E	3
+PIGMA	Metal products and machinery	3	E	3
+PIGTR	Transport equipment	3	E	3
+PIGOT	Other investment	3	E	3
+10	CHANGE IN INVENTORIES AND NET ACQUISITION OF VALUABLES	2	N	3
+UIST	At current prices	3	E	3
+OIST	At constant prices	3	E	3
+11	GROSS CAPITAL FORMATION	2	N	3
+UITT	At current prices	3	E	3
+OITT	At constant prices	3	E	3
+12	GROSS SAVING	2	N	3
+USGN	National	3	E	3
+USGG	General government (EU Member States: ESA 2010)	3	E	3
+USGP	Private (EU Member States: ESA 2010)	3	E	3
+13	NET SAVING	2	N	3
+USNN	National	3	E	3
+USNG	General government (EU Member States: ESA 2010)	3	E	3
+USNP	Private (EU Member States: ESA 2010)	3	E	3
+4	DOMESTIC AND FINAL DEMAND	1	N	4
+1	DOMESTIC DEMAND EXCLUDING CHANGE IN INVENTORIES	2	N	4
+UUNF	At current prices	3	E	4
+OUNF	At constant prices	3	E	4
+PUNF	Price deflator	3	E	4
+2	DOMESTIC DEMAND INCLUDING CHANGE IN INVENTORIES	2	N	4
+UUNT	At current prices	3	E	4
+OUNT	At constant prices	3	E	4
+OUNTQ	At constant prices: relative to a competitor group, double export weights	3	E	4
+PUNT	Price deflator	3	E	4
+3	FINAL DEMAND	2	N	4
+UUTT	At current prices	3	E	4
+OUTT	At constant prices	3	E	4
+PUTT	Price deflator	3	E	4
+4	CONTRIBUTIONS TO THE CHANGE OF THE FINAL DEMAND DEFLATOR	2	N	4
+YPUT0	Of import prices	3	E	4
+YPUT1	Of import prices excluding nominal effective exchange rates.	3	E	4
+YPUT2	Of nominal effective exchange rates	3	E	4
+YPUT3	Of relative unit labour costs in national currency	3	E	4
+YPUT4	Of real effective exchange rates	3	E	4
+YPUT5	Of domestic factors: unit labour costs + GDP price deflator	3	E	4
+YPUT6	Of GDP price deflator	3	E	4
+YPUT7	Of nominal unit labour costs	3	E	4
+YPUT8	Of net indirect taxes	3	E	4
+YPUT9	Of adjusted gross operating surplus	3	E	4
+5	NATIONAL INCOME	1	N	5
+1	GROSS NATIONAL INCOME	2	N	5
+UVGN	At current prices	3	E	5
+OVGN	At constant prices, GDP deflator	3	E	5
+2	GROSS NATIONAL INCOME PER HEAD OF POPULATION	2	N	5
+HVGNP	At current prices	3	E	5
+HVGNPR	At current prices, relative to a country or aggregate	3	E	5
+3	NET NATIONAL INCOME	2	N	5
+UVNN	At current prices	3	E	5
+4	NATIONAL DISPOSABLE INCOME AT CURRENT PRICES	2	N	5
+UVGT	Gross	3	E	5
+UVNT	Net	3	E	5
+5	GROSS NATIONAL DISPOSABLE INCOME PER HEAD OF POPULATION	2	N	5
+HVGTP	At current prices	3	E	5
+HVGTPR	Relative to a country or aggregate	3	E	5
+6	DOMESTIC PRODUCT	1	N	6
+1	GROSS DOMESTIC PRODUCT	2	N	6
+UVGD	At current prices	3	E	6
+UVGDR	At current prices, relative to a country or aggregate	3	E	6
+UVGDH	At current prices, EU member states: excessive deficit procedure	3	E	6
+OVGD	At constant prices	3	E	6
+OVGDQ	At constant prices, relative to a competitor group, double export weights	3	E	6
+OVGDA	At constant prices adjusted for the impact of terms of trade	3	E	6
+PVGD	Price deflator	3	E	6
+PVGDQ	Price deflator, relative to a competitor group, double export weights	3	E	6
+2	GROSS DOMESTIC PRODUCT PER HEAD OF POPULATION	2	N	6
+HVGDP	At current prices	3	E	6
+HVGDPR	At current prices, relative to a country or aggregate	3	E	6
+RVGDP	At constant prices	3	E	6
+3	GROSS DOMESTIC PRODUCT PER PERSON EMPLOYED	2	N	6
+HVGDE	At current prices	3	E	6
+HVGDER	At current prices, relative to a country or aggregate	3	E	6
+RVGDE	At constant prices	3	E	6
+RVGDEQ	At constant prices,relative to a competitor group, double export weights	3	E	6
+4	GROSS DOMESTIC PRODUCT PER HOUR WORKED	2	N	6
+HVGDH	At current prices	3	E	6
+HVGDHR	At current prices, relative to a country or aggregate	3	E	6
+NLHA	Average annual hours worked per person employed	3	E	6
+NLHT	Total hours worked	3	E	6
+5	POTENTIAL GROSS DOMESTIC PRODUCT AT CONSTANT PRICES	2	N	6
+OVGDP	Potential GDP	3	E	6
+AVGDGP	Gap between actual GDP and potential GDP, percentage of potential GDP	3	E	6
+6	TREND GROSS DOMESTIC PRODUCT AT CONSTANT PRICES	2	N	6
+OVGDT	Trend GDP	3	E	6
+AVGDGT	Gap between actual GDP and trend GDP, percentage of trend GDP	3	E	6
+7	GDP AT CONSTANT PRICES ADJUSTED FOR THE IMPACT OF TERMS OF TRADE PER HEAD	2	N	6
+RVGDAP	Per head of population	3	E	6
+RVGDAE	Per person employed	3	E	6
+8	CONTRIBUTIONS TO THE CHANGE OF GDP AT CONSTANT MARKET PRICES	2	N	6
+CVGD0	Of private consumption	3	E	6
+CVGD1	Of public consumption	3	E	6
+CVGD2	Of gross fixed capital formation	3	E	6
+CVGD3	Of domestic demand excluding change in inventories	3	E	6
+CVGD4	Of change in inventories and net acquisition of valuables	3	E	6
+CVGD5	Of domestic demand including change in inventories	3	E	6
+CVGD6	Of exports of goods and services. EU unadjusted for intra-EU exports	3	E	6
+CVGD7	Of final demand. EU unadjusted for intra-EU exports	3	E	6
+CVGD8	Of imports of goods and services. EU unadjusted for intra-EU exports	3	E	6
+CVGD9	Of the balance of goods and services	3	E	6
+CVGD10	Of total consumption	3	E	6
+9	ALTERNATIVE DEFINITIONS DOMESTIC PRODUCT AT CURRENT PRICES	2	N	6
+UYGD	Gross domestic product at factor cost	3	E	6
+UVND	Net domestic product at market prices	3	E	6
+UYND	Net domestic product at factor cost	3	E	6
+10	GROSS VALUE ADDED, TOTAL ECONOMY	2	N	6
+UVGE	At current basic prices	3	E	6
+OVGE	At constant basic prices	3	E	6
+7	GROSS DOMESTIC PRODUCT (INCOME APPROACH), LABOUR COSTS	1	N	7
+1	COMPENSATION OF EMPLOYEES	2	N	7
+UWCD	Total economy	3	E	7
+2	TAXES LINKED TO IMPORTS AND PRODUCTION AND SUBSIDIES; TOTAL ECONOMY	2	N	7
+UTVT	Taxes linked to imports and production	3	E	7
+UTVN	Taxes linked to imports and production minus subsidies	3	E	7
+UYVT	Subsidies	3	E	7
+3	OPERATING SURPLUS, TOTAL ECONOMY	2	N	7
+UOGD	Gross	3	E	7
+UQGD	Gross, adjusted for imputed compensation of self-employed	3	E	7
+UOND	Net	3	E	7
+UQND	Net, adjusted for imputed compensation of self-employed	3	E	7
+4	NOMINAL COMPENSATION PER EMPLOYEE, TOTAL ECONOMY	2	N	7
+HWCDW	Total economy	3	E	7
+HWCDWR	Total economy, relative to a country or aggregate	3	E	7
+HWCDWQ	Total economy, relative to a competitor group, double export weights	3	E	7
+5	REAL COMPENSATION PER EMPLOYEE, TOTAL ECONOMY	2	N	7
+RWCDV	Deflator GDP	3	E	7
+RWCDVQ	Deflator GDP, relative to a competitor group, double export weights	3	E	7
+RWCDC	Deflator private consumption	3	E	7
+6	ADJUSTED WAGE SHARE	2	N	7
+ALCD0	Total economy, percentage of GDP at current market prices	3	E	7
+ALCD2	Total economy, percentage of GDP at current factor cost	3	E	7
+7	NOMINAL UNIT LABOUR COSTS, TOTAL ECONOMY	2	N	7
+PLCD	Nominal unit laboour costs	3	E	7
+PLCDQ	Relative to a competitor group, double export weights	3	E	7
+8	REAL UNIT LABOUR COSTS, TOTAL ECONOMY	2	N	7
+QLCD	Real unit labour costs	3	E	7
+QLCDQ	Relative to competitor group, double export weights	3	E	7
+8	CAPITAL STOCK	1	N	8
+1	NET CAPITAL STOCK AT CONSTANT PRICES, TOTAL ECONOMY	2	N	8
+OKND	Net capital stock	3	E	8
+RKNDE	Per person employed	3	E	8
+AKNDV	Per unit of GDP	3	E	8
+AVGDK	GDP at constant market prices per unit of net capital stock	3	E	8
+APNDK	Net returns on net capital stock	3	E	8
+2	FACTOR PRODUCTIVITY, TOTAL ECONOMY	2	N	8
+ZVGDF	Total factor productivity	3	E	8
+ZVGDE	Labour share	3	E	8
+ZVGDK	Capital share	3	E	8
+3	PRODUCTION FACTORS SUBSTITUTION, TOTAL ECONOMY	2	N	8
+ZKNDE	Labour-capital substitution	3	E	8
+ZEKND	Capital-labour substition	3	E	8
+4	MARGINAL EFFICIENCY OF CAPITAL, TOTAL ECONOMY	2	N	8
+AKGDV	Marginal efficiency of capital, total economy	3	E	8
+9	EXPORTS AND IMPORTS OF GOODS AND SERVICES, NATIONAL ACCOUNTS	1	N	9
+1	EXPORTS OF GOODS AND SERVICES	2	N	9
+UXGS	At current prices	3	E	9
+OXGS	At constant prices	3	E	9
+OXGSQ	At constant prices, relative to a competitor group, double export weights	3	E	9
+PXGS	Price deflator	3	E	9
+PXGSQ	Price deflator, relative to a competitor group, double export weights	3	E	9
+VXGSP	Market performance of exports on export weighted imports	3	E	9
+VMGSW	Export weighted imports; 35 industrial markets	3	E	9
+2	IMPORTS OF GOODS AND SERVICES	2	N	9
+UMGS	At current prices	3	E	9
+OMGS	At constant prices	3	E	9
+PMGS	Price deflator	3	E	9
+3	EXPORTS OF GOODS	2	N	9
+UXGN	At current prices	3	E	9
+OXGN	At constant prices	3	E	9
+PXGN	Price deflator	3	E	9
+4	EXPORTS OF SERVICES	2	N	9
+UXSN	At current prices	3	E	9
+OXSN	At constant prices	3	E	9
+PXSN	Price deflator	3	E	9
+5	IMPORTS OF GOODS	2	N	9
+UMGN	At current prices	3	E	9
+OMGN	At constant prices	3	E	9
+PMGN	Price deflator	3	E	9
+6	IMPORTS OF SERVICES	2	N	9
+UMSN	At current prices	3	E	9
+OMSN	At constant prices	3	E	9
+PMSN	Price deflator	3	E	9
+7	TERMS OF TRADE	2	N	9
+APGS	Goods and services	3	E	9
+APGN	Goods	3	E	9
+APSN	Services	3	E	9
+APTA	Impact of terms of trade goods and services on real income	3	E	9
+10	BALANCES WITH THE REST OF THE WORLD	1	N	10
+1	BALANCES WITH THE REST OF THE WORLD, NATIONAL ACCOUNTS	2	N	10
+UBGS	Net exports of goods and services	3	E	10
+UBGN	Net exports of goods	3	E	10
+UBSN	Net exports of services	3	E	10
+UBRA	Net primary income from the rest of the world	3	E	10
+UBTA	Net current transfers from the rest of the world	3	E	10
+UBCA	Balance on current transactions with the rest of the world	3	E	10
+UBKA	Net capital transactions with the rest of the world	3	E	10
+UBLA	Net lending (+) - net borrowing (-), total economy	3	E	10
+2	BALANCES WITH THE REST OF THE WORLD, BOP STATISTICS	2	N	10
+UBCABOP	Current account balance, balance of payments statistics (BPM6)	3	E	10
+11	FOREIGN TRADE	1	N	11
+1	FOREIGN TRADE AT CURRENT PRICES	2	N	11
+DXGT	Exports of goods (FOB) total	3	E	11
+DXGI	Exports of goods (FOB) intra-EU	3	E	11
+DXGE	Exports of goods (FOB) extra-EU	3	E	11
+DMGT	Imports of goods (CIF) total	3	E	11
+DMGI	Imports of goods (CIF) intra-EU	3	E	11
+DMGE	Imports of goods (CIF) extra-EU	3	E	11
+2	FOREIGN TRADE SHARES IN WORLD TRADE	2	N	11
+AXGT	Exports of goods (FOB) including intra-EU exports	3	E	11
+AMGT	Imports of goods (CIF) including intra-EU imports	3	E	11
+AAGT	Average of imports and exports of goods including intra-EU trade	3	E	11
+AXGE	Exports of goods (FOB) excluding intra-EU exports	3	E	11
+AMGE	Imports of goods (CIF) excluding intra-EU imports	3	E	11
+AAGE	Average of imports and exports of goods excluding intra-EU trade	3	E	11
+12	NATIONAL ACCOUNTS BY BRANCH OF ACTIVITY	1	N	12
+1	EMPLOYMENT, PERSONS	2	N	12
+NET1	Agriculture, forestry and fishing (Nace Rev.2 A)	3	E	12
+NET2	Industry, including energy (Nace Rev.2 B_E)	3	E	12
+NET4	Construction (Nace Rev.2 F)	3	E	12
+NET5	Services  (Nace Rev.2 G_U)	3	E	12
+NETM	Manufacturing (Nace Rev.2 C)	3	E	12
+2	EMPLOYMENT, FULL-TIME EQUIVALENTS	2	N	12
+FET1	Agriculture, forestry and fishing (Nace Rev.2 A)	3	E	12
+FET2	Industry, including energy (Nace Rev.2 B_E)	3	E	12
+FET4	Construction (Nace Rev.2 F)	3	E	12
+FET5	Services  (Nace Rev.2 G_U)	3	E	12
+FETM	Manufacturing (Nace Rev.2 C)	3	E	12
+3	WAGE AND SALARY EARNERS, PERSONS	2	N	12
+NWT1	Agriculture, forestry and fishing (Nace Rev.2 A)	3	E	12
+NWT2	Industry, including energy (Nace Rev.2 B_E)	3	E	12
+NWT4	Construction (Nace Rev.2 F)	3	E	12
+NWT5	Services  (Nace Rev.2 G_U)	3	E	12
+NWTM	Manufacturing (Nace Rev.2 C)	3	E	12
+4	WAGE AND SALARY EARNERS, FULL-TIME EQUIVALENTS	2	N	12
+FWT1	Agriculture, forestry and fishing (Nace Rev.2 A)	3	E	12
+FWT2	Industry, including energy (Nace Rev.2 B_E)	3	E	12
+FWT4	Construction (Nace Rev.2 F)	3	E	12
+FWT5	Services  (Nace Rev.2 G_U)	3	E	12
+FWTM	Manufacturing (Nace Rev.2 C)	3	E	12
+5	GROSS VALUE ADDED BY MAIN BRANCH AT CURRENT PRICES	2	N	12
+UVG0	Total of branches	3	E	12
+UVG1	Agriculture, forestry and fishery products	3	E	12
+UVG2	Industry, including energy (Nace Rev.2 B_E)	3	E	12
+UVG4	Construction (Nace Rev.2 F)	3	E	12
+UVG5	Services  (Nace Rev.2 G_U)	3	E	12
+UVGM	Manufacturing (Nace Rev.2 C)	3	E	12
+6	GROSS VALUE ADDED BY MAIN BRANCH AT CURRENT PRICES PER PERSON EMPLOYED	2	N	12
+HVG1E	Agriculture, forestry and fishing (Nace Rev.2 A)	3	E	12
+HVG2E	Industry, including energy (Nace Rev.2 B_E)	3	E	12
+HVG4E	Construction (Nace Rev.2 F)	3	E	12
+HVG5E	Services  (Nace Rev.2 G_U)	3	E	12
+HVGME	Manufacturing (Nace Rev.2 C)	3	E	12
+7	GROSS VALUE ADDED BY MAIN BRANCH AT CURRENT PRICES PER EMPLOYEE	2	N	12
+HVGMW	Manufacturing (Nace Rev.2 C)	3	E	12
+8	GROSS VALUE ADDED BY MAIN BRANCH AT CONSTANT PRICES	2	N	12
+OVG0	Total of branches	3	E	12
+OVG1	Agriculture, forestry and fishing (Nace Rev.2 A)	3	E	12
+OVG2	Industry, including energy (Nace Rev.2 B_E)	3	E	12
+OVG4	Construction (Nace Rev.2 F)	3	E	12
+OVG5	Services  (Nace Rev.2 G_U)	3	E	12
+OVGM	Manufacturing (Nace Rev.2 C)	3	E	12
+9	GROSS VALUE ADDED BY MAIN BRANCH AT CONSTANT PRICES PER PERSON EMPLOYED	2	N	12
+RVG1E	Agriculture, forestry and fishing (Nace Rev.2 A)	3	E	12
+RVG2E	Industry, including energy (Nace Rev.2 B_E)	3	E	12
+RVG4E	Construction (Nace Rev.2 F)	3	E	12
+RVG5E	Services  (Nace Rev.2 G_U)	3	E	12
+RVGME	Manufacturing (Nace Rev.2 C)	3	E	12
+10	GROSS VALUE ADDED BY MAIN BRANCH AT CONSTANT PRICES PER EMPLOYEE	2	N	12
+RVGMW	Manufacturing (Nace Rev.2 C)	3	E	12
+11	PRICE DEFLATOR GROSS VALUE ADDED BY MAIN BRANCH	2	N	12
+PVG1	Agriculture, forestry and fishing (Nace Rev.2 A)	3	E	12
+PVG2	Industry, including energy (Nace Rev.2 B_E)	3	E	12
+PVG4	Construction (Nace Rev.2 F)	3	E	12
+PVG5	Services  (Nace Rev.2 G_U)	3	E	12
+PVGM	Manufacturing (Nace Rev.2 C)	3	E	12
+12	COMPENSATION OF EMPLOYEES BY MAIN BRANCH	2	N	12
+UWC1	Agriculture, forestry and fishing (Nace Rev.2 A)	3	E	12
+UWC2	Industry, including energy (Nace Rev.2 B_E)	3	E	12
+UWC4	Construction (Nace Rev.2 F)	3	E	12
+UWC5	Services  (Nace Rev.2 G_U)	3	E	12
+UWCM	Manufacturing (Nace Rev.2 C)	3	E	12
+13	NOMINAL COMPENSATION BY MAIN BRANCH PER EMPLOYEE	2	N	12
+HWC1W	Agriculture, forestry and fishing (Nace Rev.2 A)	3	E	12
+HWC2W	Industry, including energy (Nace Rev.2 B_E)	3	E	12
+HWC4W	Construction (Nace Rev.2 F)	3	E	12
+HWC5W	Services  (Nace Rev.2 G_U)	3	E	12
+HWCMW	Manufacturing (Nace Rev.2 C)	3	E	12
+14	ADJUSTED WAGE SHARE BY MAIN BRANCH	2	N	12
+ALCM	Manufacturing (Nace Rev.2 C)	3	E	12
+15	NOMINAL UNIT WAGE COSTS BY MAIN BRANCH	2	N	12
+PWC1	Agriculture, forestry and fishing (Nace Rev.2 A)	3	E	12
+PWC2	Industry, including energy (Nace Rev.2 B_E)	3	E	12
+PWC4	Construction (Nace Rev.2 F)	3	E	12
+PWC5	Services  (Nace Rev.2 G_U)	3	E	12
+PWCM	Manufacturing (Nace Rev.2 C)	3	E	12
+16	NOMINAL UNIT LABOUR COSTS BY MAIN BRANCH	2	N	12
+PLCM	Manufacturing (Nace Rev.2 C)	3	E	12
+17	REAL UNIT LABOUR COSTS BY MAIN BRANCH	2	N	12
+QLCM	Manufacturing (Nace Rev.2 C)	3	E	12
+18	INDUSTRIAL PRODUCTION	2	N	12
+VPRI	Index number	3	E	12
+13	MONETARY VARIABLES	1	N	13
+1	EXCHANGE RATES AND PURCHASING POWER PARITIES	2	N	13
+XNE	National currency units per ECU-EUR	3	E	13
+XNEF	Conversion rates between euro and former euro-zone national currencies	3	E	13
+XUNNQ	Nominal effective exchange rates, relative to a competitor group, double export weights	3	E	13
+XUNRQ	Real effective exchange rates, relative to a competitor group, double export weights	3	E	13
+KNP	GDP purchasing power parities, national currency units per PPS	3	E	13
+2	INTEREST RATES	2	N	13
+ISN	Short term nominal	3	E	13
+ISRV	Short term real, deflator GDP	3	E	13
+ISRC	Short term real, deflator private consumption	3	E	13
+ILN	Long term nominal	3	E	13
+ILRV	Long term real, deflator GDP	3	E	13
+ILRC	Long term real, deflator private consumption	3	E	13
+IYN	Yield curve	3	E	13
+14	CORPORATIONS (S11 + S12)	1	N	14
+1	REVENUE	2	N	14
+UYVC	Other subsidies on production (D39)	3	E	14
+UYNC	Net property income (D4)	3	E	14
+UCTRC	Net current transfers received (D6+D7)	3	E	14
+2	EXPENDITURE	2	N	14
+UTVC	Other taxes on production (D29)	3	E	14
+UWCC	Compensation of employees (D1)	3	E	14
+UTYC	Current taxes on income and wealth (D5)	3	E	14
+UEHC	Change in net equity of households on pension funds (D8)	3	E	14
+UITC	Gross capital formation (P5)	3	E	14
+UKOC	Other capital expenditure, net (D9 net + K2)	3	E	14
+3	BALANCES	2	N	14
+UGVAC	Gross value added at basic prices (B1g)	3	E	14
+UOGC	Gross operating surplus (B2g)	3	E	14
+UBGC	Balance of primary income, gross (B5g)	3	E	14
+UBNC	Balance of primary income, net (B5n)	3	E	14
+UVGC	Gross disposable income (B6g)	3	E	14
+UVNC	Net disposable income (B6n)	3	E	14
+USGC	Gross saving (B8g)	3	E	14
+USNC	Net saving (B8n)	3	E	14
+UBLC	Net lending (+) or net borrowing (-)  (B9)	3	E	14
+15	HOUSEHOLDS AND NPISH (S14 + S15)	1	N	15
+1	REVENUE	2	N	15
+UWCH	Compensation of employees (D1)	3	E	15
+UWSH	Gross wages and salaries (D11)	3	E	15
+UYNH	Net property income (D4)	3	E	15
+UCTRH	Current transfers received (D6+D7)	3	E	15
+2	EXPENDITURE	2	N	15
+UTYH	Current taxes on income and wealth (D5)	3	E	15
+UCTPH	Current transfers paid (D6+D7)	3	E	15
+UCPH0	Final consumption expenditure (P3)	3	E	15
+UITH	Gross capital formation (P5)	3	E	15
+UKOH	Other capital expenditure, net (D9 net + K2)	3	E	15
+3	BALANCES	2	N	15
+UOGH	Gross operating surplus and mixed income (B2g+B3g)	3	E	15
+UYOH	Non-labour income (B2g+B3g+D4 net)	3	E	15
+UVGH	Gross disposable income (B6g)	3	E	15
+OVGH	Real gross disposable income (deflator private consumption)	3	E	15
+UVNH	Net disposable income (B6n)	3	E	15
+USGH	Gross saving (B8g)	3	E	15
+ASGH	Saving rate, gross	3	E	15
+USNH	Net saving (B8n)	3	E	15
+ASNH	Saving rate, net	3	E	15
+UBLH	Net lending (+) or net borrowing (-)  (B9)	3	E	15
+16	GENERAL GOVERNMENT (S13)	1	N	16
+1	REVENUE (ESA 2010)	2	N	16
+UTVG	Taxes linked to imports and production (Indirect taxes) (D2r)	3	E	16
+UTYG	Current taxes on income and wealth (Direct taxes) (D5r)	3	E	16
+UTSG	Net social contributions received (D61r)	3	E	16
+UTAG	Actual social contributions (D611r + D613r)	3	E	16
+UTIG	Imputed social contributions	3	E	16
+UVGG	Gross disposable income (B6g)	3	E	16
+UVNG	Net disposable income (B6n)	3	E	16
+UTCT	Current tax burden; total economy	3	E	16
+UTAT	Total tax burden excluding imputed social contributions; total economy	3	E	16
+UTTT	Total tax burden including imputed social contributions; total economy	3	E	16
+UROG	Other current revenue	3	E	16
+URCG	Total current revenue	3	E	16
+USGG	Gross saving (B8g)	3	E	16
+USNG	Net saving (B8n)	3	E	16
+UKTTG	Capital transfers received (D9r)	3	E	16
+UTKG	Capital taxes (D91r)	3	E	16
+URTG	Total revenue (TR)	3	E	16
+2	EXPENDITURE (ESA 2010)	2	N	16
+UYVG	Subsidies (D3p)	3	E	16
+UYTGH	Social benefits other than social transfers in kind (D62p)	3	E	16
+UYIG	Interest (D41p)	3	E	16
+AYIGD	Interest, % gross public debt	3	E	16
+UCTG0	Final consumption expenditure (P3)	3	E	16
+UCCG0	Collective consumption (P32)	3	E	16
+UCIG0	Social transfers in kind (P31)	3	E	16
+UWCG	Compensation of employees (D1p)	3	E	16
+UUOG	Other current expenditure	3	E	16
+UUCG	Total current expenditure	3	E	16
+UIGG0	Gross fixed capital formation (P51)	3	E	16
+UKOG	Other capital expenditure, including capital transfers	3	E	16
+UKTGT	Capital transfers paid (D9p)	3	E	16
+UUTG	Total expenditure (TE)	3	E	16
+OUTG	Real total expenditure, deflator GDP	3	E	16
+UUCGI	Total current expenditure excluding interest	3	E	16
+UUTGI	Total expenditure excluding interest	3	E	16
+OUTGI	Real total expenditure excluding interest, deflator GDP	3	E	16
+3	NET LENDING (ESA 2010)	2	N	16
+UBLG	Net lending (B9)	3	E	16
+UBLGI	Net lending excluding interest	3	E	16
+UBLGG	Net lending excluding gross fixed capital formation	3	E	16
+4	EXCESSIVE DEFICIT PROCEDURE	2	N	16
+UYIGE	Interest	3	E	16
+USGGE	Gross saving	3	E	16
+UUCGE	Total current expenditure	3	E	16
+UUTGE	Total expenditure	3	E	16
+UBLGE	Net lending	3	E	16
+UBLGIE	Net lending excluding interest	3	E	16
+17	CYCLICAL ADJUSTMENT OF PUBLIC FINANCE VARIABLES	1	N	17
+1	BASED ON POTENTIAL GDP (ESA 2010)	2	N	17
+UBLGAP	Net lending adjusted for the cyclical component, % GDP	3	E	17
+UBLGAPS	Structural balance, % GDP	3	E	17
+UBLGBP	Net lending, excluding interest, % GDP	3	E	17
+UBLGBPS	Structural balance excluding interest, % GDP	3	E	17
+URTGAP	Total revenue adjusted for the cyclical component, % GDP	3	E	17
+UUTGAP	Total expenditure adjusted for the cyclical component, % GDP	3	E	17
+UUTGBP	Total expenditure, excluding interest, adjusted for the cyclical component, % GDP	3	E	17
+UBLGCP	Cyclical component of net lending, % GDP	3	E	17
+UTCGCP	Cyclical component of revenue, % GDP	3	E	17
+UUCGCP	Cyclical component of expenditure, % GDP	3	E	17
+UOOMS	One-off and other temporary measures	3	E	17
+UOOMSR	One-off and other temporary measures - revenue	3	E	17
+UOOMSE	One-off and other temporary measures - expenditure	3	E	17
+UDMGCE	Discretionary measures current expenditure	3	E	17
+UDMGCR	Discretionary measures current revenue	3	E	17
+UDMGKE	Discretionary measures capital expenditure	3	E	17
+UDMGKTR	Discretionary measures capital transfers received	3	E	17
+2	BASED ON TREND GDP (ESA 2010)	2	N	17
+UBLGA	Net lending adjusted for the cyclical component, % GDP	3	E	17
+UBLGB	Net lending, excluding interest, % GDP	3	E	17
+URTGA	Total revenue adjusted for the cyclical component, % GDP	3	E	17
+UUTGA	Total expenditure adjusted for the cyclical component, % GDP	3	E	17
+UUTGB	Total expenditure, excluding interest, adjusted for the cyclical component, % GDP	3	E	17
+UBLGC	Cyclical component of net lending, % GDP	3	E	17
+UTCGC	Cyclical component of revenue, % GDP	3	E	17
+UUCGC	Cyclical component of expenditure, % GDP	3	E	17
+18	GROSS PUBLIC DEBT	1	N	18
+1	Based on ESA 2010	2	N	18
+UDGG	Gross public debt	3	E	18
+UDGGR	Relative to a country or aggregate	3	E	18
+ADGGU	Impact of the nominal increase of GDP on gross public debt, % GDP	3	E	18
+ADGGI	Snow ball effect on gross public debt, % GDP at market prices	3	E	18
+UDGGS	Stock-flow adjustment gross public debt	3	E	18
+2	Based on ESA 2010 AND FORMER DEFINITIONS (linked series)	2	N	18
+UDGGL	Gross public debt	3	E	18
+UDGGLR	Relative to a country or aggregate	3	E	18

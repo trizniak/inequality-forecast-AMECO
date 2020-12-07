@@ -1,0 +1,71 @@
+Data Sources
+
+---- EC_FXT2005.txt [European Economic Forecast – Spring 2020 : Statistical Annex]
+https://ec.europa.eu/info/sites/info/files/economy-finance/ecfin_forecast_spring_2020_statist_annex_en.pdf
+GDP.pc  : Gross domestic product per capita (percentage change on preceding year) [Table 4]
+EMP     : Total employment (percentage change on preceding year) [Table 23]
+ULC     : Unit labour costs, whole economy (percentage change on preceding year) [Table 28]
+EmpC    : Compensation of employees per head (percentage change on preceding year) [Table 25]
+S20     : Spring 2020 forecast
+A19     : Autumn 2019 forecast
+
+IMF : https://www.imf.org/en/Publications/WEO/Issues/2020/04/14/weo-april-2020
+
+EUROSTAT
+
+  Country vulnerabilities
+    Economy
+      GDP per-capita : nama_10_pc 
+      Final consumption expenditure of households : nama_10_fcs / P31_S14
+      Tourism as % of GDP : sbs_na_1a_se_r2 (https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Accommodation_and_food_service_statistics_-_NACE_Rev._2) : Non-financial business economy (B-N_S95_X_K) ; Total Services (NACE sections : H,I,J,L,M,N,S95) ; Tourism industries (mainly tourism : H511,I551,I552,I553,N791 ; partially tourism : H491,H4932,H4939,H501,H503,I561,I563,N771,N7721,N799) 
+      People employed in "Wholesale and retail trade, transport, accommodation and food service activities" & Manufacturing : nama_10_a10_e
+    Labor Market
+      Activity rate
+      People with part-time & temp contracts
+      In-work poverty
+    Population
+      % population 65+
+
+    DECILES
+      Metric : absolute & ratio to median
+      Drop & Length of recovery
+      LY SILC level compared to pre-crisis
+    AGE GROUPS
+      Metric : AROP ROV (Ratio to Overall Value)
+    Savings rate : proxy for ability to withstand income shocks
+
+
+Unemployment rates by sex, age and citizenship (%) [lfsa_urgan]
+Long-term unemployment (12 months or more) as a percentage of the total unemployment, by sex, age and citizenship (%) [lfsa_upgan]
+Activity rates by sex, age and citizenship (%) [lfsa_argan]
+Employees by type of employment contract, age and European socio-economic group (lfsa_esegt)
+Employment by working time, age and European socio-economic group (lfsa_esegp)
+
+At-risk-of-poverty rate by poverty threshold, age and sex - EU-SILC and ECHP surveys (ilc_li02)
+At-risk-of-poverty rate anchored at a fixed moment in time (2005) by age and sex - EU-SILC survey (ilc_li22)
+In-work at-risk-of-poverty rate by age and sex - EU-SILC survey (ilc_iw01)
+
+
+ILO Monitor : COVID-19 and the world of work. Second edition
+Updated estimates and analysis
+7 April 2020
+
+Table 2. Workers at risk: Sectoral perspective (p. 4-5)
+
+Medium-high :
+* Arts, entertainment and recreation, and other services (NACE section : R)
+* Transport; storage and communication (NACE section : H)
+
+High :
+* Accommodation and food services (NACE section : I)
+* Real estate; business and administrative activities (NACE section : L ; N)
+* Wholesale and retail trade; repair of motor vehicles and motorcycles (NACE section : G)
+
+https://www.ilo.org/wcmsp5/groups/public/---dgreports/---dcomm/documents/briefingnote/wcms_740877.pdf
+
+[NACE Rev. 2 : Statistical classification of economic activities in the European Community](https://ec.europa.eu/eurostat/documents/3859598/5902521/KS-RA-07-015-EN.PDF)
+
+
+
+Social Vulnerability in Europe--The New Configuration of Social Risks [2010] (p. 78-83)
+

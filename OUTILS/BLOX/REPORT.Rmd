@@ -1,0 +1,400 @@
+---
+title: COVID<br>- A Rudimentary Forecast Model -
+author: Bogdan Micu
+output:
+  html_document:
+    theme: flatly
+    toc: true
+    toc_float: true
+    toc_depth: 3
+mainfont: Calibri
+---
+
+<!-- ------------- START LAYOUT SETUP ------------- -->
+
+<!-- LOGO -->
+
+<script>
+  $(document).ready(function() {
+    $('#TOC').parent().prepend('<div id=\"nav_logo\"><img src=\"https://ec.europa.eu/eurostat/cache/digpub/european_economy/vis/chapter21_1/images/logoestat.png\"></div>');
+  });
+</script>
+
+<!-- STYLE -->
+
+<style>
+#nav_logo {
+  width: 100%;
+  margin-top: 20px;
+}
+#TOC {
+  background: url("https://ec.europa.eu/eurostat/documents/10186/8486739/experimental-blue.png");
+  background-size: contain;
+  padding-top: 77px !important;
+  background-repeat: no-repeat;
+}
+
+h1.title {
+  font-size: 31px;
+  font-weight: bold;
+  color: DarkRed;
+  text-align:center;
+}
+
+body {
+  font-size: 17px;
+  font-family: Calibri;
+  color: #273749;
+  text-align:justify;
+}
+
+a, a:hover {
+    color: cornflowerblue;
+}
+
+</style>
+
+```{r SETUP, message=FALSE, warning=FALSE, include=FALSE}
+
+#options(knitr.duplicate.label="allow")
+
+ragg_png=function(...,dpi=169) ragg::agg_png(...,res=dpi,units='in') # https://www.jumpingrivers.com/blog/r-knitr-markdown-png-pdf-graphics/
+
+knitr::opts_chunk$set(dpi=69,
+                      out.width="100%",
+                      message=FALSE,
+                      warning=FALSE,
+                      echo=FALSE) # ,dev="ragg_png", fig.ext="png")
+
+```
+<!-- ------------- END LAYOUT SETUP ------------- -->
+
+
+```{r LOGO, echo=FALSE}
+
+download.file(url="https://ec.europa.eu/eurostat/documents/7894008/9036137/IncomeEquality120.png",
+              destfile=here("OUTILS","MIX","logo.png"),
+              mode="wb")
+
+htmltools::img(src=knitr::image_uri(here("OUTILS","MIX","logo.png")), 
+               alt='logo', 
+               style='position:absolute; top:0; right:0; padding:9px; height:111px; width:111px')
+
+```
+
+```{r update, message=FALSE, warning=FALSE, include=FALSE}
+
+forecast.title = read_html("https://ec.europa.eu/info/business-economy-euro/indicators-statistics/economic-databases/macro-economic-database-ameco/ameco-database_en") %>%
+  html_nodes("p") %>%
+  html_text() %>%
+  .[str_which(.,"database update")] %>%
+  str_split(" - ") %>%
+  unlist() %>%
+  .[2] %>%
+  noquote()
+
+last.update = read_html("https://ec.europa.eu/info/business-economy-euro/indicators-statistics/economic-databases/macro-economic-database-ameco/download-annual-data-set-macro-economic-database-ameco_en") %>%
+  html_nodes("p") %>%
+  html_text() %>%
+  .[str_which(.,"update")] %>%
+  str_split(": ") %>%
+  unlist() %>%
+  .[2] %>%
+  noquote
+
+```
+
+
+<p>
+<p>
+# Project Description
+
+This is an attempt to produce a forecast of income-related indicators using a Time Series Linear Model (TSLM) with ARIMA errors.
+
+### Output
+
+The key output are AROP estimates for the total population (Total.AROP). Additional output included estimates for quintiles and for AROP by age groups.<br>
+All estimates are calculated at EU MS level; no EU aggregate is provided.<br>
+
+Total.AROP is computed in several different ways :
+
+* directly;
+* based on the relative position of ARPT (60% of the MEDIAN) in relation to D1 and D3;
+* as weighted average of AROP by age groups.
+
+### Target Indicators : Historical Data
+
+The source of historical data for the target indicators is [Eurobase](https://ec.europa.eu/eurostat/data/database) (Eurostat dissemination database).
+
+* AROP : [table ilc_li02](http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=ilc_li02)
+* Quintile cutoff points : [table ilc_di01](http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=ilc_di01)
+
+**NB** : in these two tables the year refers to the <span style="color:DarkRed">*survey year*</span>, which is one year later than the *income reference year*.
+
+### Explanatory Variables
+
+The source of forecasts for the explanatory variables is the *`r forecast.title`* included in the [Annual Macro-Economic database of the European Commission (AMECO)](https://ec.europa.eu/info/business-economy-euro/indicators-statistics/economic-databases/macro-economic-database-ameco/ameco-database_en).<br>
+The data is available as [zipped files](http://ec.europa.eu/economy_finance/db_indicators/ameco/documents/ameco0.zip). The last update of the files, used for modeling, was on `r last.update`.<br>
+The explanatory variables have been selected based on their potential relationship with the income-related indicators.<br>
+
+The explanatory variables are :  
+
+```{r results='asis'}
+cat(var.XPL.long)
+```
+
+
+All explanatory variables enter the model as percentage change on preceding year.
+<p>
+**NB** : The forecast does NOT take into account any planned, announced, or potential policy initiatives that might impact incomes either directly or indirectly, at either MS or EU level.
+<p>
+****
+<p>
+
+# TIME SERIES {.tabset .tabset-pills}
+
+## AROP
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, fig.width=13, fig.height=9}
+
+F.viz.TS(npt="level",grp="COUNTRY",other="dot")
+F.viz.TS()
+
+```
+
+<p>
+****
+<p>
+
+## AROP by Age groups {.tabset .tabset-pills}
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, fig.height=9, fig.width=13}
+
+F.viz.TS(grp="Age5G",npt="level",incl.other=FALSE) + ggtitle("AROP by Age groups")
+
+```
+
+<p>
+****
+<p>
+
+```{r Age5G, eval=FALSE, message=FALSE, warning=FALSE, collapse=TRUE, include=FALSE}
+
+out=NULL
+for (age in unique(data$Age5G)[-1]) {
+  out=c(out,
+        knitr::knit_expand(here("OUTILS","BLOX","BLOK.AgeG.Rmd")))
+}
+
+```
+`r #paste(knitr::knit(text=out), collapse='\n')`
+
+### AROP : <16
+```{r echo=FALSE, message=FALSE, warning=FALSE, fig.width=13, fig.height=9}
+F.viz.TS(grp="COUNTRY",fltr="Age5G",ind="<16",npt="level",other="dot")
+F.viz.TS(grp="COUNTRY",fltr="Age5G",ind="<16")
+```
+
+<p>
+****
+<p>
+
+### AROP : 16-24
+```{r echo=FALSE, message=FALSE, warning=FALSE, fig.width=13, fig.height=9}
+F.viz.TS(grp="COUNTRY",fltr="Age5G",ind="16-24",npt="level",other="dot")
+F.viz.TS(grp="COUNTRY",fltr="Age5G",ind="16-24")
+```
+
+<p>
+****
+<p>
+
+### AROP : 25-49
+```{r echo=FALSE, message=FALSE, warning=FALSE, fig.width=13, fig.height=9}
+F.viz.TS(grp="COUNTRY",fltr="Age5G",ind="25-49",npt="level",other="dot")
+F.viz.TS(grp="COUNTRY",fltr="Age5G",ind="25-49")
+```
+
+<p>
+****
+<p>
+
+### AROP : 50-64
+```{r echo=FALSE, message=FALSE, warning=FALSE, fig.width=13, fig.height=9}
+F.viz.TS(grp="COUNTRY",fltr="Age5G",ind="50-64",npt="level",other="dot")
+F.viz.TS(grp="COUNTRY",fltr="Age5G",ind="50-64")
+```
+
+<p>
+****
+<p>
+
+### AROP : 65+
+```{r echo=FALSE, message=FALSE, warning=FALSE, fig.width=13, fig.height=9}
+F.viz.TS(grp="COUNTRY",fltr="Age5G",ind="65+",npt="level",other="dot")
+F.viz.TS(grp="COUNTRY",fltr="Age5G",ind="65+")
+```
+
+<p>
+****
+<p>
+
+
+## Quintiles {.tabset .tabset-pills}
+
+```{r eval=FALSE, message=FALSE, warning=FALSE, collapse=TRUE, include=FALSE}
+
+out=NULL
+for (qnt in unlist(unique(subset(data,file=="POZ",select=INDICATOR)))) {
+  out=c(out,
+        knitr::knit_expand(here("OUTILS","BLOX","BLOK.Q.Rmd")))
+}
+
+```
+`r #paste(knitr::knit(text=out), collapse='\n')`
+
+### D1
+```{r echo=FALSE, message=FALSE, warning=FALSE, fig.width=13, fig.height=9}
+F.viz.TS(grp="COUNTRY",ind="D1",npt="level",other="dot")
+F.viz.TS(ind="D1")
+```
+
+<p>
+****
+<p>
+
+### D3
+```{r echo=FALSE, message=FALSE, warning=FALSE, fig.width=13, fig.height=9}
+F.viz.TS(grp="COUNTRY",ind="D3",npt="level",other="dot")
+F.viz.TS(ind="D3")
+```
+
+<p>
+****
+<p>
+
+### MEDIAN
+```{r echo=FALSE, message=FALSE, warning=FALSE, fig.width=13, fig.height=9}
+F.viz.TS(grp="COUNTRY",ind="MEDIAN",npt="level",other="dot")
+F.viz.TS(ind="MEDIAN")
+```
+
+<p>
+****
+<p>
+
+### D7
+```{r echo=FALSE, message=FALSE, warning=FALSE, fig.width=13, fig.height=9}
+F.viz.TS(grp="COUNTRY",ind="D7",npt="level",other="dot")
+F.viz.TS(ind="D7")
+```
+
+<p>
+****
+<p>
+
+### D9
+```{r echo=FALSE, message=FALSE, warning=FALSE, fig.width=13, fig.height=9}
+F.viz.TS(grp="COUNTRY",ind="D9",npt="level",other="dot")
+F.viz.TS(ind="D9")
+```
+
+<p>
+****
+<p>
+
+
+## Explanatory Variables {.tabset .tabset-pills}
+
+### Forecast comparison
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, fig.width=9, fig.height=17}
+
+F.viz.FXT()
+
+```
+
+### GDP *per capita*
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, fig.width=13, fig.height=9}
+
+F.viz.TS(grp="COUNTRY",ind="GDPpc")
+
+```
+
+<p>
+****
+<p>
+
+### Employment
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, fig.width=13, fig.height=9}
+
+F.viz.TS(grp="COUNTRY",ind="EMP")
+
+```
+
+<p>
+****
+<p>
+
+### Unit Labor Cost
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, fig.width=13, fig.height=9}
+
+F.viz.TS(grp="COUNTRY",ind="ULC")
+
+```
+
+<p>
+****
+<p>
+
+# Comparative Performance<br>of Modeling Strategies
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, fig.width=9, fig.height=1.3}
+
+F.viz.PERF("RMSE")
+F.viz.PERF("RSQ")
+
+```
+
+<p>
+****
+<p>
+
+
+# ANNEX : Forecasted values
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, fig.width=9, fig.height=17}
+
+F.tab.FXT()
+
+```
+
+<p>
+****
+<p>
+
+# --- *COUNTRY sections* ---
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, include=FALSE, collapse=TRUE}
+
+out=NULL
+for (country in country.list[!country.list %in% c("EU",countries.out)]) {
+  out=c(out,
+        knitr::knit_expand(here("OUTILS","BLOX","BLOK.COUNTRY.Rmd")))
+}
+
+```
+`r paste(knitr::knit(text=out), collapse='\n')`
+
+</div>
+
+<center>
+<a href="http://ec.europa.eu/eurostat">
+<img src="https://ec.europa.eu/eurostat/cache/digpub/european_economy/vis/chapter21_1/images/logoestat.png" width="369" /></a><p>
+**Directorate F: Social statistics**<br>
+Unit F1: *Social indicators; methodology and development; Relations with users*<br>
+[contact the **Flash Estimates** team `r knitr::asis_output("\U1F4E7")`](mailto:ESTAT-FLASH-EST-INCOME@ec.europa.eu)
+</center>

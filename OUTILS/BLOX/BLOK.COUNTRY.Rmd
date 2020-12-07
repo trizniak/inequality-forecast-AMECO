@@ -1,0 +1,58 @@
+```{r echo=FALSE , message=FALSE , warning=FALSE}
+country='{{country}}'
+```
+
+<p>
+### `r subset(EU.PO,COUNTRY==country,select=Country.Name)` (`r country`) {.tabset .tabset-pills}
+
+#### AROP<br>Observed, <span style='color:darkkhaki'>Modeled</span>, and <span style='color:orangered'>Forecasted</span> values
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+
+F.viz.EST(country=country,facet="model",npt="level")
+F.viz.EST(country=country,facet="model",npt="yoy")
+F.viz.SXR(country)
+
+```
+
+<p>
+****
+<p>
+
+#### AROP<br>by Age groups
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+
+F.viz.TS(country=country,npt="level") + ggtitle(NULL)
+F.viz.TS(country=country,incl.TOTAL=FALSE) + ggtitle(NULL)
+
+```
+
+<p>
+****
+<p>
+
+#### Quintiles
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+
+F.viz.TS(country=country,fltr="file",ind="POZ",grp="INDICATOR",npt="level") + ggtitle(NULL)
+F.viz.TS(country=country,fltr="file",ind="POZ",grp="INDICATOR") + ggtitle(NULL)
+
+```
+
+<p>
+****
+<p>
+
+#### Explanatory<br>Variables
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+
+F.viz.TS(country=country,fltr="file",ind="XPL",grp="INDICATOR",incl.other=FALSE) + ggtitle(NULL)
+
+```
+
+<p>
+****
+<p>
