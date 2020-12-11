@@ -5,20 +5,21 @@ update=TRUE # update main data files (data.breaks, DATAFILE, data)? TRUE/FALSE
 report=TRUE # generate output? TRUE/FALSE
 
 # ---- PARAMETERS ----
-countries.out=c("DE") # delete countries but KEEP file ("HR","LT","MT")
+#countries.out=c("DE") # delete countries but KEEP file ("HR","LT","MT")
+countries.out=c("BE","BG","CZ","DK","DE","EE","IE","EL","ES","FR","HR","IT","CY","LV","LT","HU","MT","NL","AT","PL","PT","RO","SI","SK","FI","SE") # delete countries but KEEP file ("HR","LT","MT")
 
 # Explanatory Variables ----
 var.XPL = c(HVGDP="GDP (per capita)",
             NETD="Employees",
             PLCD="Unit Labour Costs"
-            #NSTD="Self-employed",
-            #NWTN="Employees",
-            #UWSH="Gross wages and salaries (per capita)",
-            #UYNH="Net property income (per capita)",
-            #UCTRH="Transfers received (per capita)",
-            #HCPHP="Private consumption (per capita)",
-            #HVGTP="Gross national disposable income (per capita)",
-            #HWCDW="Nominal compensation per employee"
+            #,NSTD="Self-employed"
+            #,NWTN="Employees"
+            ,UWSH="Gross wages and salaries (per capita)"
+            #,UYNH="Net property income (per capita)"
+            #,UCTRH="Transfers received (per capita)"
+            #,HCPHP="Private consumption (per capita)"
+            #,HVGTP="Gross national disposable income (per capita)"
+            #,HWCDW="Nominal compensation per employee"
             )
 
 # ---- START ----

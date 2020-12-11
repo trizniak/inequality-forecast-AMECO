@@ -1,5 +1,5 @@
 ---
-title: COVID<br>- A Rudimentary Forecast Model -
+title: Income Inequality Indicators in the Times of COVID<br><i><span style="color:#273749;font-size:17px">- A Rudimentary Econometric Model based on AMECO Forecasts -</span></i>
 author: Bogdan Micu
 output:
   html_document:
@@ -35,7 +35,7 @@ mainfont: Calibri
 }
 
 h1.title {
-  font-size: 31px;
+  font-size: 27px;
   font-weight: bold;
   color: DarkRed;
   text-align:center;
@@ -139,7 +139,7 @@ The explanatory variables have been selected based on their potential relationsh
 
 The explanatory variables are :  
 
-```{r results='asis'}
+```{r var.XPL, results='asis'}
 cat(var.XPL.long)
 ```
 
@@ -155,7 +155,7 @@ All explanatory variables enter the model as percentage change on preceding year
 
 ## AROP
 
-```{r echo=FALSE, message=FALSE, warning=FALSE, fig.width=13, fig.height=9}
+```{r AROP, echo=FALSE, fig.height=9, fig.width=13, message=FALSE, warning=FALSE}
 
 F.viz.TS(npt="level",grp="COUNTRY",other="dot")
 F.viz.TS()
@@ -168,7 +168,7 @@ F.viz.TS()
 
 ## AROP by Age groups {.tabset .tabset-pills}
 
-```{r echo=FALSE, message=FALSE, warning=FALSE, fig.height=9, fig.width=13}
+```{r AROPbyAG, echo=FALSE, fig.height=9, fig.width=13, message=FALSE, warning=FALSE}
 
 F.viz.TS(grp="Age5G",npt="level",incl.other=FALSE) + ggtitle("AROP by Age groups")
 
@@ -178,126 +178,46 @@ F.viz.TS(grp="Age5G",npt="level",incl.other=FALSE) + ggtitle("AROP by Age groups
 ****
 <p>
 
-```{r Age5G, eval=FALSE, message=FALSE, warning=FALSE, collapse=TRUE, include=FALSE}
+```{r block_AROP, message=FALSE, echo=FALSE, include=FALSE}
 
-out=NULL
-for (age in unique(data$Age5G)[-1]) {
-  out=c(out,
-        knitr::knit_expand(here("OUTILS","BLOX","BLOK.AgeG.Rmd")))
+f.block.AROP = function (age.group) {
+    paste0("\n### `r 'AROP : ",age.group,"'`\n",
+           "```{r, label='",gsub(" ","-",age.group),"', fig.width=13, fig.height=9}",
+           "\nF.viz.TS(grp=\"COUNTRY\",fltr=\"Age5G\",ind=\"",age.group,"\",npt=\"level\",other=\"dot\")\n",
+           "F.viz.TS(grp=\"COUNTRY\",fltr=\"Age5G\",ind=\"",age.group,"\")\n```")
 }
 
+out=NULL
+out=c(out,
+      knitr::knit_expand(text=paste(lapply(names(palette.Age5G)[-c(1:2)],
+                                           f.block.AROP),
+                                    collapse="\n\n")))
+
 ```
-`r #paste(knitr::knit(text=out), collapse='\n')`
+`r paste(knitr::knit(text=out), collapse='\n')`
 
-### AROP : <16
-```{r echo=FALSE, message=FALSE, warning=FALSE, fig.width=13, fig.height=9}
-F.viz.TS(grp="COUNTRY",fltr="Age5G",ind="<16",npt="level",other="dot")
-F.viz.TS(grp="COUNTRY",fltr="Age5G",ind="<16")
-```
-
-<p>
-****
-<p>
-
-### AROP : 16-24
-```{r echo=FALSE, message=FALSE, warning=FALSE, fig.width=13, fig.height=9}
-F.viz.TS(grp="COUNTRY",fltr="Age5G",ind="16-24",npt="level",other="dot")
-F.viz.TS(grp="COUNTRY",fltr="Age5G",ind="16-24")
-```
-
-<p>
-****
-<p>
-
-### AROP : 25-49
-```{r echo=FALSE, message=FALSE, warning=FALSE, fig.width=13, fig.height=9}
-F.viz.TS(grp="COUNTRY",fltr="Age5G",ind="25-49",npt="level",other="dot")
-F.viz.TS(grp="COUNTRY",fltr="Age5G",ind="25-49")
-```
-
-<p>
-****
-<p>
-
-### AROP : 50-64
-```{r echo=FALSE, message=FALSE, warning=FALSE, fig.width=13, fig.height=9}
-F.viz.TS(grp="COUNTRY",fltr="Age5G",ind="50-64",npt="level",other="dot")
-F.viz.TS(grp="COUNTRY",fltr="Age5G",ind="50-64")
-```
-
-<p>
-****
-<p>
-
-### AROP : 65+
-```{r echo=FALSE, message=FALSE, warning=FALSE, fig.width=13, fig.height=9}
-F.viz.TS(grp="COUNTRY",fltr="Age5G",ind="65+",npt="level",other="dot")
-F.viz.TS(grp="COUNTRY",fltr="Age5G",ind="65+")
-```
-
-<p>
-****
-<p>
 
 
 ## Quintiles {.tabset .tabset-pills}
 
-```{r eval=FALSE, message=FALSE, warning=FALSE, collapse=TRUE, include=FALSE}
+```{r block_Q, message=FALSE, echo=FALSE, include=FALSE}
 
-out=NULL
-for (qnt in unlist(unique(subset(data,file=="POZ",select=INDICATOR)))) {
-  out=c(out,
-        knitr::knit_expand(here("OUTILS","BLOX","BLOK.Q.Rmd")))
+f.block.Q = function (quintile) {
+    paste0("\n### `r '",quintile,"'`\n",
+           "```{r, label='",quintile,"', fig.width=13, fig.height=9}",
+           "\nF.viz.TS(grp=\"COUNTRY\",ind=\"",quintile,"\",npt=\"level\",other=\"dot\")\n",
+           "F.viz.TS(ind=\"",quintile,"\")\n```")
 }
 
+out=NULL
+out=c(out,
+      knitr::knit_expand(text=paste(lapply(levels(data$INDICATOR)[2:6],
+                                           f.block.Q),
+                                    collapse="\n\n")))
+
 ```
-`r #paste(knitr::knit(text=out), collapse='\n')`
+`r paste(knitr::knit(text=out), collapse='\n')`
 
-### D1
-```{r echo=FALSE, message=FALSE, warning=FALSE, fig.width=13, fig.height=9}
-F.viz.TS(grp="COUNTRY",ind="D1",npt="level",other="dot")
-F.viz.TS(ind="D1")
-```
-
-<p>
-****
-<p>
-
-### D3
-```{r echo=FALSE, message=FALSE, warning=FALSE, fig.width=13, fig.height=9}
-F.viz.TS(grp="COUNTRY",ind="D3",npt="level",other="dot")
-F.viz.TS(ind="D3")
-```
-
-<p>
-****
-<p>
-
-### MEDIAN
-```{r echo=FALSE, message=FALSE, warning=FALSE, fig.width=13, fig.height=9}
-F.viz.TS(grp="COUNTRY",ind="MEDIAN",npt="level",other="dot")
-F.viz.TS(ind="MEDIAN")
-```
-
-<p>
-****
-<p>
-
-### D7
-```{r echo=FALSE, message=FALSE, warning=FALSE, fig.width=13, fig.height=9}
-F.viz.TS(grp="COUNTRY",ind="D7",npt="level",other="dot")
-F.viz.TS(ind="D7")
-```
-
-<p>
-****
-<p>
-
-### D9
-```{r echo=FALSE, message=FALSE, warning=FALSE, fig.width=13, fig.height=9}
-F.viz.TS(grp="COUNTRY",ind="D9",npt="level",other="dot")
-F.viz.TS(ind="D9")
-```
 
 <p>
 ****
@@ -308,43 +228,35 @@ F.viz.TS(ind="D9")
 
 ### Forecast comparison
 
-```{r echo=FALSE, message=FALSE, warning=FALSE, fig.width=9, fig.height=17}
+```{r FXT, echo=FALSE, message=FALSE, warning=FALSE, fig.width=9, fig.height=17}
 
 F.viz.FXT()
 
 ```
 
-### GDP *per capita*
-
-```{r echo=FALSE, message=FALSE, warning=FALSE, fig.width=13, fig.height=9}
-
-F.viz.TS(grp="COUNTRY",ind="GDPpc")
-
-```
-
 <p>
 ****
 <p>
 
-### Employment
+```{r block_XPL, message=FALSE, echo=FALSE, include=FALSE}
 
-```{r echo=FALSE, message=FALSE, warning=FALSE, fig.width=13, fig.height=9}
+f.block.XPL = function (var.xpl) {
+  title=str_remove(unname(var.XPL.long[var.xpl]),
+                                   coll(paste0("* **",var.xpl,"** : ")))
+    paste0("\n### `r '",var.XPL[var.xpl],"'`\n",
+           "```{r, label='",var.xpl,"', fig.width=13, fig.height=9}",
+           "\nF.viz.TS(grp=\"COUNTRY\",ind=\"",var.xpl,"\",npt=\"level\",other=\"dot\") + ggtitle(\"",title,"\")\n",
+           "F.viz.TS(grp=\"COUNTRY\",ind=\"",var.xpl,"\") + ggtitle(\"",title,"\")\n```")
+}
 
-F.viz.TS(grp="COUNTRY",ind="EMP")
+out=NULL
+out=c(out,
+      knitr::knit_expand(text=paste(lapply(names(var.XPL),
+                                           f.block.XPL),
+                                    collapse="\n\n")))
 
 ```
-
-<p>
-****
-<p>
-
-### Unit Labor Cost
-
-```{r echo=FALSE, message=FALSE, warning=FALSE, fig.width=13, fig.height=9}
-
-F.viz.TS(grp="COUNTRY",ind="ULC")
-
-```
+`r paste(knitr::knit(text=out), collapse='\n')`
 
 <p>
 ****
@@ -352,7 +264,7 @@ F.viz.TS(grp="COUNTRY",ind="ULC")
 
 # Comparative Performance<br>of Modeling Strategies
 
-```{r echo=FALSE, message=FALSE, warning=FALSE, fig.width=9, fig.height=1.3}
+```{r MSperf, echo=FALSE, message=FALSE, warning=FALSE, fig.width=9, fig.height=1.3}
 
 F.viz.PERF("RMSE")
 F.viz.PERF("RSQ")
@@ -366,7 +278,7 @@ F.viz.PERF("RSQ")
 
 # ANNEX : Forecasted values
 
-```{r echo=FALSE, message=FALSE, warning=FALSE, fig.width=9, fig.height=17}
+```{r FXTtab, echo=FALSE, message=FALSE, warning=FALSE, fig.width=9, fig.height=17}
 
 F.tab.FXT()
 
@@ -378,7 +290,7 @@ F.tab.FXT()
 
 # --- *COUNTRY sections* ---
 
-```{r echo=FALSE, message=FALSE, warning=FALSE, include=FALSE, collapse=TRUE}
+```{r COUNTRY, echo=FALSE, message=FALSE, warning=FALSE, include=FALSE, collapse=TRUE}
 
 out=NULL
 for (country in country.list[!country.list %in% c("EU",countries.out)]) {
