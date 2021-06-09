@@ -84,23 +84,22 @@ htmltools::img(src=knitr::image_uri(here("OUTILS","MIX","logo.png")),
 
 ```{r update, message=FALSE, warning=FALSE, include=FALSE}
 
-forecast.title = read_html("https://ec.europa.eu/info/business-economy-euro/indicators-statistics/economic-databases/macro-economic-database-ameco/ameco-database_en") %>%
-  html_nodes("p") %>%
-  html_text() %>%
-  .[str_which(.,"database update")] %>%
-  str_split(" - ") %>%
-  unlist() %>%
-  .[2] %>%
-  noquote()
-
-last.update = read_html("https://ec.europa.eu/info/business-economy-euro/indicators-statistics/economic-databases/macro-economic-database-ameco/download-annual-data-set-macro-economic-database-ameco_en") %>%
+ref.AMECO = read_html("https://ec.europa.eu/info/business-economy-euro/indicators-statistics/economic-databases/macro-economic-database-ameco/download-annual-data-set-macro-economic-database-ameco_en") %>%
   html_nodes("p") %>%
   html_text() %>%
   .[str_which(.,"update")] %>%
   str_split(": ") %>%
   unlist() %>%
   .[2] %>%
-  noquote
+  str_remove("[)]") %>%
+  str_split(" [(]") %>%
+  unlist()
+
+forecast.title = ref.AMECO[1] %>%
+  noquote()
+
+last.update = ref.AMECO[2] %>%
+  noquote()
 
 ```
 
@@ -146,7 +145,8 @@ cat(var.XPL.long)
 
 All explanatory variables enter the model as percentage change on preceding year.
 <p>
-**NB** : The forecast does NOT take into account any planned, announced, or potential policy initiatives that might impact incomes either directly or indirectly, at either MS or EU level.
+**NB** : The forecast does NOT take into account any planned, announced, or potential policy initiatives that might impact incomes either directly or indirectly, at either MS or EU level.<br>
+It also assumes a relationship between target indicators and explanatory variables that is stable over time.
 <p>
 ****
 <p>
