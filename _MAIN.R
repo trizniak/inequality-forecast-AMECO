@@ -40,8 +40,13 @@ source(here("OUTILS","FUNS","Fviz_PERF.R"))
 # ---- OUTPUT ----
 {if(report)
   rmarkdown::render(here("OUTILS","BLOX","REPORT.Rmd"),
+<<<<<<< HEAD
                     output_file=paste0("Income Inequality Indicators in the Times of COVID",
                                        " [",Sys.Date(),"]",
+=======
+                    output_file=paste0("Income Inequality Indicators in the Times of COVID ",
+                                       Sys.Date(),
+>>>>>>> 6f104745aa0b70cf189bec05ecbe2df2e6e59221
                                        ".html"),
                     output_dir=here("OUTPUT"),
                     intermediates_dir=here("T E M P"),
