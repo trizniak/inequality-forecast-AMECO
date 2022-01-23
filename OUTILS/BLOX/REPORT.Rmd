@@ -16,7 +16,7 @@ mainfont: Calibri
 
 <script>
   $(document).ready(function() {
-    $('#TOC').parent().prepend('<div id=\"nav_logo\"><img src=\"https://ec.europa.eu/eurostat/cache/digpub/european_economy/vis/chapter21_1/images/logoestat.png\"></div>');
+    $('#TOC').parent().prepend('<div id=\"nav_logo\"><img src=\"../OUTILS/MIX/ESTAT logo.png\"></div>');
   });
 </script>
 
@@ -84,7 +84,8 @@ htmltools::img(src=knitr::image_uri(here("OUTILS","MIX","logo.png")),
 
 ```{r update, message=FALSE, warning=FALSE, include=FALSE}
 
-ref.AMECO = read_html("https://ec.europa.eu/info/business-economy-euro/indicators-statistics/economic-databases/macro-economic-database-ameco/download-annual-data-set-macro-economic-database-ameco_en") %>%
+ref.AMECO = read_html(url("https://ec.europa.eu/info/business-economy-euro/indicators-statistics/economic-databases/macro-economic-database-ameco/download-annual-data-set-macro-economic-database-ameco_en",
+                          "rb")) %>%
   html_nodes("p") %>%
   html_text() %>%
   .[str_which(.,"update")] %>%
@@ -305,7 +306,7 @@ for (country in country.list[!country.list %in% c("EU",countries.out)]) {
 
 <center>
 <a href="http://ec.europa.eu/eurostat">
-<img src="https://ec.europa.eu/eurostat/cache/digpub/european_economy/vis/chapter21_1/images/logoestat.png" width="369" /></a><p>
+<img src="../OUTILS/MIX/ESTAT logo.png" width="369" /></a><p>
 **Directorate F: Social statistics**<br>
 Unit F1: *Social indicators; methodology and development; Relations with users*<br>
 [contact the **Flash Estimates** team `r knitr::asis_output("\U1F4E7")`](mailto:ESTAT-FLASH-EST-INCOME@ec.europa.eu)
